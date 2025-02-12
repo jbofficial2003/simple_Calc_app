@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity(), OnClickListener{
     lateinit var input_a : EditText
     lateinit var input_b : EditText
     lateinit var answer: TextView
+    lateinit var clear : Button
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,33 +35,45 @@ class MainActivity : AppCompatActivity(), OnClickListener{
         input_a= findViewById(R.id.num_a)
         input_b= findViewById(R.id.num_b)
         answer= findViewById(R.id.result)
+        clear=findViewById(R.id.AC)
 
         btn_plus.setOnClickListener(this)
         btn_minus.setOnClickListener(this)
         btn_multiply.setOnClickListener(this)
         btn_divide.setOnClickListener(this)
+        clear.setOnClickListener(this)
+
         }
 
 
     @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
-        var num1= input_a.text.toString().toDouble()
-        var num2= input_b.text.toString().toDouble()
-        var result = 0.0
-        when(v?.id){
-            R.id.plus ->{
-                result=num1+num2
+        var num1 = input_a.text.toString().toDoubleOrNull()
+        var num2 = input_b.text.toString().toDoubleOrNull()
+        var result: Double? = null
+        when (v?.id) {
+            R.id.plus -> {
+                result = if (num1 != null && num2 != null) num1 + num2 else null
             }
-            R.id.minus ->{
-                result=num1-num2
+
+            R.id.minus -> {
+                result = if (num1 != null && num2 != null) num1 - num2 else null
             }
-            R.id.multiply ->{
-                result=num1*num2
+
+            R.id.multiply -> {
+                result = if (num1 != null && num2 != null) num1 * num2 else null
             }
-            R.id.divide ->{
-                result=num1/num2
+
+            R.id.divide -> {
+                result = if (num1 != null && num2 != null && num2 != 0.0) num1 / num2 else null
             }
+
+            R.id.AC -> {
+                result = 0.0
+                input_a.text.clear()
+                input_b.text.clear()
+            }
+        }
+        answer.text = "$result"
     }
-        answer.text= "result is $result"
-}
 }

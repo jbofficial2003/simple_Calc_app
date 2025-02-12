@@ -7,4 +7,5 @@
     <string name="multiply">*</string>
     <string name="divide">/</string>
     <string name="result">result</string>
+    <string name="clear">clear</string>
 </resources>
