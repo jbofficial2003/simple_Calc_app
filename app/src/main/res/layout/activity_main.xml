@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#1b1b1b"
+    tools:context=".MainActivity">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_a"
+        android:id="@+id/num_a"
+        android:importantForAutofill="no"
+        android:textColor="#ffffff"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_b"
+        android:id="@+id/num_b"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/white"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/result"
+        android:id="@+id/result"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus"
+            android:id="@+id/plus"
+            android:padding="5dp"
+            android:textSize="25sp"
+            android:layout_marginEnd="5dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minus"
+            android:id="@+id/minus"
+            android:padding="5dp"
+            android:textSize="25sp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multiply"
+        android:id="@+id/multiply"
+        android:padding="5dp"
+        android:textSize="25sp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/divide"
+        android:id="@+id/divide"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginEnd="5dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
